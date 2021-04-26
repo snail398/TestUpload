@@ -12,6 +12,6 @@ jobs:
           with:
             python-version: '3.x'
 
-        - run: pip install yadisk
+        - run: python pip install yadisk
 
         - run: python upload.py
