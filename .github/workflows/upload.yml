@@ -3,14 +3,14 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: mongo
+    container: python
     steps:
         - name: Checkout Project
           uses: actions/checkout@v1
 
         - uses: actions/setup-python@v2
           with:
-            python-version: '3.0'
+            python-version: '3.#'
 
         - run: python pip install yadisk
 
