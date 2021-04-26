@@ -1,0 +1,20 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: unityci/editor:ubuntu-2019.4.9f1-android-0.12.0
+    steps:
+        - name: Checkout Project
+          uses: actions/checkout@v1
+
+        - uses: actions/setup-python@v2
+          with:
+            python-version: '3.x'
+
+        - uses: BSFishy/pip-action@v1
+          with:
+            packages:
+              yadisk
+
+	- run: python upload.py
